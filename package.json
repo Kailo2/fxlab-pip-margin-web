@@ -1,0 +1,10 @@
+{
+  "name": "fxlab-pip-margin-web",
+  "version": "1.0.0",
+  "description": "Forex pip value & margin calculator -- static web app with optional live rates.",
+  "scripts": {
+    "test": "node tests/pipCalculator.test.js"
+  },
+  "license": "MIT",
+  "private": true
+}

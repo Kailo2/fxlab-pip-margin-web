@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FX Lab — Pip &amp; Margin Calculator</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Pip &amp; Margin Calculator</h1>
+    <p class="subtitle">ارزش پیپ و مارجین لازم رو دقیق، بر اساس ارز quote واقعی هر جفت‌ارز، حساب کن.</p>
+
+    <div class="field">
+      <label for="symbol">جفت‌ارز</label>
+      <select id="symbol"></select>
+    </div>
+
+    <div class="live-row">
+      <button type="button" id="fetchLive">دریافت قیمت زنده</button>
+      <span id="liveStatus" class="status"></span>
+    </div>
+
+    <form id="calcForm">
+      <div class="row">
+        <div class="field">
+          <label for="lots">حجم (لات)</label>
+          <input type="number" id="lots" step="0.01" min="0.01" value="1" required>
+        </div>
+        <div class="field">
+          <label for="price">قیمت فعلی</label>
+          <input type="number" id="price" step="0.0001" min="0.0001" value="1.0850" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="leverage">لوریج (۱:x)</label>
+          <input type="number" id="leverage" step="1" min="1" value="100" required>
+        </div>
+        <div class="field">
+          <label for="accountCurrency">ارز حساب</label>
+          <select id="accountCurrency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit">محاسبه</button>
+    </form>
+
+    <div id="result" hidden></div>
+
+    <footer>ابزار آموزشی -- قبل از معامله‌ی واقعی حتماً با مشخصات بروکر خودت مطابقت بده.</footer>
+  </div>
+
+  <script src="js/pipCalculator.js"></script>
+  <script src="js/rates.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
